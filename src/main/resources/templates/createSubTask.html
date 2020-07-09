@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a sub task</title>
+</head>
+<div th:include="header.html"></div>
+<body>
+
+<form action="#" th:action="@{/tasks/createSubTask}" th:object="${task}" method="post">
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" value=""><br>
+    <label for="description">Description:</label><br>
+    <input type="text" id="description" name="description" value=""><br>
+    <p>  <input type="hidden" th:value="*{id}" name="task"/>  </p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task details</title>
+</head>
+<div th:include="header.html"></div>
+<body>
+<div th:if="${task == null}">
+    <p>Task not found</p>
+</div>
+
+<div th:unless="${task == null}">
+    <p th:text="${task.title}">title:</p>
+    <p th:text="${task.description}">Description:</p>
+    <p th:text="${task.date}">Due date:</p>
+</div>
+<div th:each="subtask:${task.getSubTasks()}">
+     <li th:text="${subtask.toString()}"></li>
+
+</div>
+</body>
+</html>
