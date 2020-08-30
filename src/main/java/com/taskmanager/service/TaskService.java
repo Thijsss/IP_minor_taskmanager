@@ -52,6 +52,8 @@ public class TaskService implements TaskServiceInterace{
         return task;
     }
 
+
+
     public void editTask(Task task){
         Task t = getTaskById(task.getId());
         t.setTitle(task.getTitle());
@@ -62,12 +64,13 @@ public class TaskService implements TaskServiceInterace{
         repository.flush();
     }
 
-    public void addSubTask(SubTask subTask){
+    public void addSubTask(SubTask subTask) {
         Task task = getTaskById(subTask.getTask());
         task.addSubTask(subTask);
         repository.save(task);
 
     }
+
 
     private TaskDTO convert(Task task){
         TaskDTO dto = new TaskDTO();

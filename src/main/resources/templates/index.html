@@ -6,6 +6,11 @@
 </head>
 <div th:include="header.html"></div>
 <body>
+<p th:text="#{greeting}"></p>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out">
+</form>
+
 
 </body>
 </html>

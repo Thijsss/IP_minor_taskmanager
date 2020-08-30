@@ -57,11 +57,11 @@ public class TaskmanagerController {
     }
 
     @GetMapping("/tasks/{id}/sub/create")
-    public ModelAndView newSubTask(Model model, @PathVariable("id") long id){
+    public ModelAndView newSubTask(Model model, @PathVariable("id") long id) {
         ModelAndView a = new ModelAndView("createSubTask");
         a.addObject("task", service.getTaskById(id));
         return a;
-       // Task foundTask = service.getTaskById(id);
+        // Task foundTask = service.getTaskById(id);
         //model.addAttribute("task", foundTask);
         //return "createSubTask";
     }

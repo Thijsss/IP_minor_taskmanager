@@ -71,6 +71,7 @@ public class Task {
         return Date;
     }
 
+
     public void setTitle(String title) {
         if(title == null || title.trim().equals("")) {
             throw new IllegalArgumentException("title invalid");
@@ -104,5 +105,8 @@ public class Task {
     }
     public void setSubtasks(List<SubTask> subTasks) {
         this.subtasks = subTasks;
+
     }
+
+
 }
